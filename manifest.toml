@@ -1,0 +1,17 @@
+[plugin]
+name = "Color Suite"
+handle = "color_suite"
+description = "Simple color-based conversion, picking, and operations."
+tags = ["example", "utility", "colors", "weaver"]
+author = "crux"
+version = "0.1.0"
+# The plugin API this is built for, which is the version of `lorealm-plugin` in
+# Cargo.toml. A server only runs plugins built for its own.
+api = "0.1.0"
+permissions = []
+
+[structure]
+backend = "target/wasm32-wasip2/release/color_suite.wasm"
+
+[build]
+backend = ["cargo", "build", "--release", "--target", "wasm32-wasip2"]
